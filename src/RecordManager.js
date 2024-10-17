@@ -8,14 +8,14 @@ const RecordManager = () => {
     const [mobile, setMobile] = useState('');
 
     const fetchRecords = async () => {
-        const response = await axios.get('http://localhost:5000/records'); // Adjust the URL if needed
+        const response = await axios.get('https://demo-2-5nc8.onrender.com/records'); // Adjust the URL if needed
         setRecords(response.data);
     };
 
     const addRecord = async (e) => {
         e.preventDefault();
         if (name && mobile) {
-            await axios.post('http://localhost:5000/add', { name, mobile });
+            await axios.post('https://demo-2-5nc8.onrender.com/add', { name, mobile });
             setName('');
             setMobile('');
             fetchRecords();
